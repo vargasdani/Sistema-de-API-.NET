@@ -37,13 +37,13 @@ Na frente de cada método está a descricao, essa inclusao foi feita pois utiliz
 - Método: GET
 - Retorno: Lista de todos os climas
 
- [
+> [
   {
     "id": 1,
     "nome": "tropical",
     "descricao": "O clima tropical é caracterizado por temperaturas elevadas e chuvas recorrentes, e ocorre nas regiões intertropicais, entre os trópicos de Câncer e Capricórnio"
   }
- ]
+> ]
 
 
 
