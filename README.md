@@ -45,5 +45,54 @@ Na frente de cada método está a descricao, essa inclusao foi feita pois utiliz
   }
 > ]
 
+### Buscar clima por ID
+
+- URL: https://localhost:porta/swagger/api/Clima/{id}
+- Método: GET
+- Retorno: O clima correspondente ao ID informado
+
+> [
+  {
+    "id": 2,
+    "nome": "subtropical",
+    "descricao": "é um tipo de clima que ocorre em regiões de transição entre as zonas tropicais e temperadas, caracterizado por: Temperaturas amenas, Chuvas bem distribuídas ao longo do ano, Quatro estações bem definidas, Alta amplitude térmica anual"
+  }
+> ]
+
+
+### Adicionar Clima
+
+- URL: https://localhost:porta/swagger/api/Clima
+- Método: POST
+
+> [
+  {
+    "nome": "equatorial",
+    "descricao": "é um tipo de clima tropical úmido que se caracteriza por ser quente e úmido, com altas temperaturas e chuvas frequentes e intensas"
+  }
+> ]
+
+### Atualizar Clima
+
+- URL: https://localhost:porta/swagger/api/Clima/{id}
+- Método: PUT
+
+> [
+  {
+    "nome": "árido",
+    "descricao": "O clima árido, também conhecido como clima desértico, é caracterizado por: Baixa umidade do ar, Raros registros de chuva, Excesso de evaporação em relação à precipitação, Condições climáticas mais severas que o clima semiárido."
+  }
+> ]
+
+### Deletar Clima
+
+- URL: https://localhost:porta/swagger/api/Clima/{id}
+- Método: DELETE
+- Parâmetro: informar ID do clima a ser deletado
+
+
+
+
+
 
 
