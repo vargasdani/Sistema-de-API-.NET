@@ -24,11 +24,26 @@ O banco de dados utilizado é o SQL Server, nesse banco iremos realizar os CRUDs
 ### CRUD
 
 Podemos observar os métodos CRUD dentro do swagger:
-![image](https://github.com/user-attachments/assets/cd96e440-0fdf-429d-b60e-f8c93f7924b9)
+![image](https://github.com/user-attachments/assets/29336585-22ce-4776-90ee-296b2ec93aad)
 Na frente de cada método está a descricao, essa inclusao foi feita pois utilizamos uma documentacao com Swagger dentro do código fonte.
 
 ### Instruções para realizar o CRUD
 
+### Clima
+
+### Listar Climas
+
+- URL: https://localhost:porta/swagger/api/Clima
+- Método: GET
+- Retorno: Lista de todos os climas
+
+> [
+  {
+    "id": 0,
+    "nome": "string",
+    "descricao": "string"
+  }
+> ]
 
 
 
