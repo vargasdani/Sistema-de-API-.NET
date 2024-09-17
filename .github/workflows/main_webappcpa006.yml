@@ -22,11 +22,14 @@ jobs:
           dotnet-version: '8.x'
           include-prerelease: true
 
+      - name: Restore dependencies
+        run: dotnet restore ./SistemaAPI.sln  # Apontar para o arquivo .sln ou .csproj
+
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ./SistemaAPI.sln --configuration Release  # Apontar para o arquivo .sln
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ./SistemaAPI/SistemaAPI.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp  # Apontar para o arquivo .csproj
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
