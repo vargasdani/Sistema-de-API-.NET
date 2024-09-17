@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy ASP.Net Core app to Azure Web App - webappcpa006
 
 on:
@@ -14,7 +11,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
@@ -23,16 +20,16 @@ jobs:
           include-prerelease: true
 
       - name: Restore dependencies
-        run: dotnet restore ./SistemaAPI.sln  # Apontar para o arquivo .sln ou .csproj
+        run: dotnet restore ./SistemaAPI/SistemaAPI.sln  # Apontar para o arquivo .sln
 
       - name: Build with dotnet
-        run: dotnet build ./SistemaAPI.sln --configuration Release  # Apontar para o arquivo .sln
+        run: dotnet build ./SistemaAPI/SistemaAPI.sln --configuration Release  # Apontar para o arquivo .sln
 
       - name: dotnet publish
-        run: dotnet publish ./SistemaAPI/SistemaAPI.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp  # Apontar para o arquivo .csproj
+        run: dotnet publish ./SistemaAPI/SistemaAPI/SistemaAPI.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp  # Apontar para o arquivo .csproj
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
@@ -46,7 +43,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: .net-app
 
@@ -56,5 +53,5 @@ jobs:
         with:
           app-name: 'webappcpa006'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6E8589937F2E462FBF4E2B62DDDCA88B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: .
